@@ -17,7 +17,6 @@ export const NFTProvider = ({ children }) => {
   // const [count, setCount] = useState(0);
 
   const nftCurrency = 'ETH';
-  const count = 0;
 
   // function CountInc() {
   //   setCount(count + 1);
@@ -93,7 +92,6 @@ export const NFTProvider = ({ children }) => {
     const contract = fetchContract(signer);
     // CountInc();
 
-    count += 1;
     // await contract.CountInc();
 
     const listingPrice = await contract.getListingPrice();
@@ -179,7 +177,7 @@ export const NFTProvider = ({ children }) => {
   };
 
   return (
-    <NFTContext.Provider value={{ nftCurrency, connectWallet, currentAccount, uploadToIPFS, createNFT, fetchNFTs, fetchMyNFTsOrListedNFTs, buyNft, createSale, count }}>
+    <NFTContext.Provider value={{ nftCurrency, connectWallet, currentAccount, uploadToIPFS, createNFT, fetchNFTs, fetchMyNFTsOrListedNFTs, buyNft, createSale }}>
       {children}
     </NFTContext.Provider>
   );
